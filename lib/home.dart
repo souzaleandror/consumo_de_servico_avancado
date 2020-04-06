@@ -35,8 +35,13 @@ class _HomeState extends State<Home> {
   }
 
   _post() async {
+    var corpo = {"userId": 120, "id": null, "title": "asda", "body": "Copro"};
+
     http.Response response = await http.post(url + "/posts",
-        headers: {"Content-type": "application/json; charset=UTF-8"});
+        headers: {"Content-type": "application/json; charset=UTF-8"},
+        body: corpo);
+    print("resposta: ${response.statusCode}");
+    print("REsposta: +${response.body}");
   }
 
   _put() {}
